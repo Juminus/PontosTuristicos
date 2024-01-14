@@ -19,11 +19,19 @@ from django.urls import path
 from rest_framework import routers
 from django.conf.urls import include
 
-from pontos_turisticos.api.viewsets import PontosTuristicosViewSet
+from pontos_turisticos.api.viewsets import PontoTuristicoViewSet
+from atracoes.api.viewsets import AtracaoViewSet
+from endereco.api.viewsets import EnderecoViewSet
+from comentarios.api.viewsets import ComentarioViewSet
+from avaliacoes.api.viewsets import AvaliacaoViewSet
 
 
 router = routers.DefaultRouter()
-router.register(r'pontoturistico', PontosTuristicosViewSet)
+router.register(r'pontosturisticos', PontoTuristicoViewSet)
+router.register(r'atracoes', AtracaoViewSet)
+router.register(r'enderecos', EnderecoViewSet)
+router.register(r'comentarios', ComentarioViewSet)
+router.register(r'avaliacoes', AvaliacaoViewSet)
 
 urlpatterns = [
     path('', include(router.urls)),

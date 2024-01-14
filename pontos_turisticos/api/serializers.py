@@ -1,7 +1,7 @@
 from rest_framework.serializers import ModelSerializer
-from pontos_turisticos.models import PontosTurisicos
+from pontos_turisticos.models import PontoTurisico
 
 class PontosTurisicosSerializer(ModelSerializer):
     class Meta:
-        model = PontosTurisicos
+        model = PontoTurisico
         fields = 'id', 'nome', 'descricao'
