@@ -3,5 +3,7 @@ from endereco.models import Endereco
 from .serializers import EnderecoSerializer
 
 class EnderecoViewSet(ModelViewSet):
-    queryset = Endereco.objects.all()
     serializer_class = EnderecoSerializer
+
+    def get_queryset(self):
+        return Endereco.objects.all()
